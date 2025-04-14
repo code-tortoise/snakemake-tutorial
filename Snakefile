@@ -1,9 +1,9 @@
+configfile: "config.yaml"
 
 rule all:
     input:
         "plots/quals.svg"
 
-SAMPLES = ["A","B"]
 
 rule bwa_map:
     input:
@@ -35,8 +35,8 @@ rule samtools_index:
 rule bcftools_call:
     input:
         fa="data/genome.fa",
-        bam=expand("sorted_reads/{sample}.bam", sample=SAMPLES),
-        bai=expand("sorted_reads/{sample}.bam.bai", sample=SAMPLES)
+        bam=expand("sorted_reads/{sample}.bam", sample=config["samples"]),
+        bai=expand("sorted_reads/{sample}.bam.bai", sample=config["samples"])
     output:
         "calls/all.vcf"
     shell:
