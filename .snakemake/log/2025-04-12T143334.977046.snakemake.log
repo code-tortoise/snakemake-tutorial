@@ -1,0 +1,6 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: LAPTOP-VJUKPTIC
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce sorted__reads/A.bam (if you use input functions make sure that they don't raise unexpected exceptions).

@@ -1,0 +1,41 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: LAPTOP-VJUKPTIC
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+samtools_sort        2
+total                2
+
+Select jobs to execute...
+Execute 2 jobs...
+[Sat Apr 12 14:35:47 2025]
+localrule samtools_sort:
+    input: mapped_reads/A.bam
+    output: sorted_reads/A.bam
+    jobid: 2
+    reason: Missing output files: sorted_reads/A.bam
+    wildcards: sample=A
+    resources: tmpdir=/tmp
+
+[Sat Apr 12 14:35:47 2025]
+localrule samtools_sort:
+    input: mapped_reads/B.bam
+    output: sorted_reads/B.bam
+    jobid: 0
+    reason: Missing output files: sorted_reads/B.bam
+    wildcards: sample=B
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Sat Apr 12 14:35:47 2025]
+Finished jobid: 0 (Rule: samtools_sort)
+1 of 2 steps (50%) done
+[Sat Apr 12 14:35:47 2025]
+Finished jobid: 2 (Rule: samtools_sort)
+2 of 2 steps (100%) done
+Complete log(s): /home/lizalfos/snakemake-tutorial/.snakemake/log/2025-04-12T143547.498262.snakemake.log

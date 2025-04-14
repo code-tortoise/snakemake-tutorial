@@ -1,0 +1,42 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: LAPTOP-VJUKPTIC
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+bcftools_call        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Apr 12 16:53:35 2025]
+localrule bcftools_call:
+    input: data/genome.fa, sorted_reads/A.bam, sorted_reads/B.bam, sorted_reads/A.bam.bai, sorted_reads/B.bam.bai
+    output: calls/all.vcf
+    jobid: 1
+    reason: Missing output files: calls/all.vcf
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Sat Apr 12 16:53:35 2025]
+Finished jobid: 1 (Rule: bcftools_call)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Apr 12 16:53:35 2025]
+localrule all:
+    input: calls/all.vcf
+    jobid: 0
+    reason: Input files updated by another job: calls/all.vcf
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Sat Apr 12 16:53:35 2025]
+Finished jobid: 0 (Rule: all)
+2 of 2 steps (100%) done
+Complete log(s): /home/lizalfos/snakemake-tutorial/.snakemake/log/2025-04-12T165335.330922.snakemake.log
